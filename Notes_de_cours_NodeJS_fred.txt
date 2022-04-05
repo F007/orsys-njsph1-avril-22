@@ -133,4 +133,6 @@ npm i ts-node -D
 pour lire directement du ts sur node
  npx ts-node server.ts
  
- 
+ pour lancer le projet on modifie le package.json
+ "start": "npx nodemon server.ts"
+ puis dans un terminal on fait un : npm start 

@@ -4,7 +4,7 @@ const express = require("express");
 const serveIndex = require("serve-index"); //gestion des repertoires
 
 const app = express();
-const port = 3000;
+const port: number = 3000;
 const wwwDir = ".";
 
 app.use((req, res, next) => {
