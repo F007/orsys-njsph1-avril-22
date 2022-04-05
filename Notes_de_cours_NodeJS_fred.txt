@@ -46,7 +46,7 @@ javascript console utils => on selection la variable puis ctrl + shift + L est s
 prettier
 git graph
 JavaScript and TypeScript Nightly
-
+on renomme le fichier server.js en server.ts
 
 
 
@@ -108,3 +108,22 @@ npx nodemon server.js
 
 on peut aussi modifier la fichier package.json pour mettre  "start": "nodemon" 
 puis on demarrera le projet avec npm start 
+
+
+se creer un compte sur npmjs
+
+typescript
+npm i --save-dev @types/node
+npx tsc server.ts
+il va compiler le fichiers server.ts et recréer un fichier server.js avec quelques modif pour optimiser et rendre compatible le code 
+
+
+anciennement on declarer les variable en var, maintenant c'est let et const
+const pour les variablenon modifiable
+let variable modifiable
+on peux modifier const a = {toto: 13}
+a.titi = 14
+on utilise au max const sauf dans les boucles.
+
+
+titi.call("tat", "dddd", "deddd"); ou titi.bind(); va appeler une focntion avec argument ou pas 
