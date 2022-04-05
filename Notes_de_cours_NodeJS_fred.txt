@@ -47,7 +47,7 @@ prettier
 git graph
 JavaScript and TypeScript Nightly
 on renomme le fichier server.js en server.ts
-
+puis on va recompiler avec npx tsc --target ES2018 server.ts (qui genere server.js
 
 
 
@@ -127,3 +127,10 @@ on utilise au max const sauf dans les boucles.
 
 
 titi.call("tat", "dddd", "deddd"); ou titi.bind(); va appeler une focntion avec argument ou pas 
+
+
+npm i ts-node -D
+pour lire directement du ts sur node
+ npx ts-node server.ts
+ 
+ 
