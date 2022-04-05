@@ -1,0 +1,110 @@
+cours ORSYS du 5 au 8 avril 2022 sur Node JS
+--------------------------------------------
+jlg-consulting.com
+https://jlg-consulting.com/orsys/ => a voir
+github => jlg-formation/njsph1-avril-22.git
+
+GITHUB 
+creer un depot 
+git remote add origine https://jlg-formation/njsph1-avril-22.git
+git remote # pour info
+git push -u origine master
+
+Objectifs pédagogiques
+1°) Installer et configurer un serveur Node.js
+2°) Mettre en œuvre les concepts de la programmation événementielle et asynchrone
+3°) Mettre en place un framework Web
+4°) Manipuler l'API de Node.js
+5°) Gérer la persistance dans une base de données NoSQL avec un ODM
+
+
+1°) Installer et configurer un serveur Node.js
+https://nodejs.org/en/ => install
+https://github.com/coreybutler/nvm-windows/releases => pour nvm-windows
+nvm install lts ou nvm install latest
+nvm use 17.8.0
+nvm list
+https://git-scm.com/
+Visual Studio Code => cmd => code
+https://tortoisegit.org/download/
+
+install https://prettier.io/ pour la mise en forme puis dans code click droit '"mettre en forme"
+mettre en anglais
+preference => Format On Save (ca met en forme automac)
+et format document whit dans un click droit 
+
+module node https://www.npmjs.com/
+
+
+git config --global user.name "frederic"
+git config --global user.email "frederic.jaimes@ratp.fr"
+
+mettre a jour VScode => reload windows
+
+plugin VSCODE
+javascript console utils => on selection la variable puis ctrl + shift + L est sa mette un console.log :D
+prettier
+git graph
+JavaScript and TypeScript Nightly
+
+
+
+
+
+2°) Mettre en œuvre les concepts de la programmation événementielle et asynchrone
+dans le repertoire => cmd => git init
+puis ouvrir code dans le repertoire de travail 
+on crée un fichier server.js puis on le lance avec cmd "node server.js
+
+info
+npm => gere le package
+npx => 
+semver.org pour les version.
+
+
+npm init -y
+rpm i express
+les modules node sont un repertoire qui contient un fichier package.json
+
+mettre  dans le repertoire back .gitignores => node_modules # on neva pas commit les modules 
+
+pour info => https://www.conventionalcommits.org/en/v1.0.0/ => pour les messages
+
+npm install serve-index
+
+info => https://developer.mozilla.org/fr/docs/Web/HTTP/Methods
+-----------
+HTTP requete 
+POST /titi/toto HTTP/2.0
+Host: www.orsys.fr
+cle: valeur
+dzssd: dssdsd
+Content-Type:Text/plain
+Content-Length: 12  # body de 12 caracteres
+
+dsf
+fd
+fds
+fsd #12 caracteres
+---------------
+HTTP reponse
+HTTP/1.1 201 created
+cle: valeur
+dzssd: dssdsd
+Content-Length: 12  # body de 12 caracteres
+Content-Type:application/json
+
+{"toto":123} #12 caracteres
+
+---------
+nodemon est un utilitaire d'interface de ligne de commande (CLI) développé par @rem. 
+Il enveloppe votre application Node, surveille le système de fichiers et redémarre automatiquement 
+le processus. Cet article vous permettra d'en apprendre davantage sur l'installation, le réglage et la 
+configuration de nodemon
+ca redemarre le server automatique a chaque modification !!!!
+
+npm i nodenom -D
+npx nodemon server.js
+
+on peut aussi modifier la fichier package.json pour mettre  "start": "nodemon" 
+puis on demarrera le projet avec npm start 
