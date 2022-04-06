@@ -1,5 +1,6 @@
 import express from "express";
 import serveIndex from "serve-index"; //gestion des repertoires
+import { api } from "./api";
 
 console.log("About the server");
 
@@ -12,11 +13,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/api/crash", (req, res, next) => {
-  (async () => {
-    throw new Error("oups... crash....");
-  })();
-});
+app.use("/api", api); //router
 
 app.use(express.static(wwwDir));
 app.use(serveIndex(wwwDir, { icons: true }));
