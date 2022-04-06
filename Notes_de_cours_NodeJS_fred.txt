@@ -164,6 +164,10 @@ pour lire directement du ts sur node
   npm run build
   npm run start:prod
   
-
+  
+on install PM2 cote server pour la prod (voir le site)
+faut creer un fichier ecosystem.config.js et lancer
+pm2 start ecosystem.config.js --env production
+ca peut etre coupler avec NGINX
  
  
