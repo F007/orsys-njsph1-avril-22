@@ -4,6 +4,9 @@ jlg-consulting.com
 https://jlg-consulting.com/orsys/ => a voir
 github => jlg-formation/njsph1-avril-22.git
 
+accessibilité obligatoire pour les sites web RGAA https://www.numerique.gouv.fr/uploads/rgaa/RGAA-v4.1.pdf
+
+
 GITHUB 
 creer un depot 
 git remote add origine https://jlg-formation/njsph1-avril-22.git
@@ -27,6 +30,10 @@ nvm list
 https://git-scm.com/
 Visual Studio Code => cmd => code
 https://tortoisegit.org/download/
+
+setting => cherche et cocher editing html 
+plugin install Angular Language Service
+
 
 install https://prettier.io/ pour la mise en forme puis dans code click droit '"mettre en forme"
 mettre en anglais
@@ -181,6 +188,39 @@ ca peut etre coupler avec NGINX
  npm install -g @angular/cli => https://angular.io/
  pour les graphique char.js
  >ng new front et on choisi SCSS
+ cd front
+ npm start qui demarre direct le server localhost:4200
+ 
+ ANGULAR
+ 5 artefacts
+	Composant
+	Modules (paquets d'artefacts)
+	Directives (composant sans parti visuel)
+	Pipe 
+	Service
+ 
+ https://refactoring.guru/
  
  
+ on cree un module 
+ ng generate module layout -m app (-d pour de faux, pour tester) 
+ 
+ maintenant on crée la page html qui est composé du header, body, footer attaché au layout
+ >ng g c layout/header -d ( on retire le -d)
+ >ng g c layout/header --export
+ >ng g c layout/body --export
+ >ng g c layout/footer --export
+ 
+ pour les images svg (image legere) https://www.iconfinder.com/search?q=stock
+ 
+ pour du confort sur les racourcie, faut changer le raccourcie de emmett "tab" et remplacer par ctrl+e
+ prefernece => raccourcie clavier => ctrl+ecosystem
+ puis dans C:\Users\orsys\AppData\Roaming\Code\User\keybinding.json, on garde que key et command.
+ 
+ install plugin SVGpour VSCODE
+ 
+ on modifie le scss et pour le site, on modifie styles.scss
+ dans .browserlistrc, on configure les browser autorisé.
+npm install normalize.css
+npm install  sanitize.css
  
