@@ -50,7 +50,12 @@ on renomme le fichier server.js en server.ts
 puis on va recompiler avec npx tsc --target ES2018 server.ts (qui genere server.js
 on install aussi error lens pour afficher directement l'erreur dans le code.
 
-
+ 
+ install JavaScript (ES6) code snippets pour VSCODE
+ install extention chrome 
+ json-formater => https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=fr
+ 
+ 
 
 2°) Mettre en œuvre les concepts de la programmation événementielle et asynchrone
 dans le repertoire => cmd => git init
@@ -169,5 +174,13 @@ on install PM2 cote server pour la prod (voir le site)
 faut creer un fichier ecosystem.config.js et lancer
 pm2 start ecosystem.config.js --env production
 ca peut etre coupler avec NGINX
+ 
+
+ On s'occupe du FRONT (Angular)
+ ------------------------------
+ npm install -g @angular/cli => https://angular.io/
+ pour les graphique char.js
+ >ng new front et on choisi SCSS
+ 
  
  
