@@ -2,12 +2,12 @@
 
 
 import express from "express";
-import  serveIndex from "serve-index"; //gestion des repertoires
+import serveIndex from "serve-index"; //gestion des repertoires
 
 console.log("About the server");
 
 const app = express();
-const port: number = 3000;
+const port = +process.env.PORT || 3000;
 const wwwDir = ".";
 
 app.use((req, res, next) => {

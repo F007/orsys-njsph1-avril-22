@@ -2,7 +2,10 @@
   "compilerOptions": {
     "target": "ES2018",
     "module": "CommonJS",
-    "moduleResolution": "Node", //va chercher dans node
-    "esModuleInterop": true
-  }
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules/**/*"]
 }
