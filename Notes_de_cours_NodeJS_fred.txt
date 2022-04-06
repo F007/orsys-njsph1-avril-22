@@ -221,6 +221,7 @@ ca peut etre coupler avec NGINX
  
  on modifie le scss et pour le site, on modifie styles.scss
  dans .browserlistrc, on configure les browser autorisé.
-npm install normalize.css
+npm install normalize.css => https://caniuse.com/?search=fullscreen pour voir les compatibilités
+a voir aussi le flex => https://css-tricks.com/
 npm install  sanitize.css
- 
+ voir https://www.w3schools.com/html/default.asp pour la doc html, JS et plus encore

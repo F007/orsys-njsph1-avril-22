@@ -1,15 +1,27 @@
 header {
-    //font-size: 10px;
-    height: 3em; //trois fois la taille du taille en cours, pratique pour les zooms
-    background-color: #eee;
+  //font-size: 10px;
+  height: 3em; //trois fois la taille du taille en cours, pratique pour les zooms
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5em;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: inherit;
+    text-decoration: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+    span {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
 }
 
-img    {
-    height: 2em;
-}
-
-footer {
-    //font-size: 10px;
-    height: 3em; //trois fois la taille du taille en cours, pratique pour les zooms
-    background-color: #eee;
+img {
+  height: 2em;
 }

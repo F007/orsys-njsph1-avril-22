@@ -1,0 +1,7 @@
+:host {
+  //c'est le app-root
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column; //flex vertical
+  justify-content: space-between; //met les header en haut et les footer en bas
+}
