@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2022"
+    "target": "ES2018",
+    "module": "CommonJS",
+    "moduleResolution": "Node", //va chercher dans node
+    "esModuleInterop": true
   }
 }

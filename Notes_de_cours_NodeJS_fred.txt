@@ -48,6 +48,7 @@ git graph
 JavaScript and TypeScript Nightly
 on renomme le fichier server.js en server.ts
 puis on va recompiler avec npx tsc --target ES2018 server.ts (qui genere server.js
+on install aussi error lens pour afficher directement l'erreur dans le code.
 
 
 

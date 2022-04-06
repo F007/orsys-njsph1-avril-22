@@ -1,7 +1,10 @@
-console.log("About the server");
 
-const express = require("express");
-const serveIndex = require("serve-index"); //gestion des repertoires
+
+
+import express from "express";
+import  serveIndex from "serve-index"; //gestion des repertoires
+
+console.log("About the server");
 
 const app = express();
 const port: number = 3000;
