@@ -137,3 +137,33 @@ pour lire directement du ts sur node
  pour lancer le projet on modifie le package.json
  "start": "npx nodemon server.ts"
  puis dans un terminal on fait un : npm start 
+
+ 
+ Mettre en production
+ on va compiler le code pour le transformer de TS en JS pour le server
+ npx tsc
+ il va genere le fichier server.js dans le repertoire ./dist
+ est on test node dist/server.js
+ 
+ ou 'npm run build' si declarer dans package.json avec "build": "tsc",
+ et/ou demarage auto avec compilation avec 
+ "build": "tsc",
+ "start:prod": "node dist/server.js"
+ puis 'npm run start:prod' 
+ 
+ pour spécifier le port
+ "start:prod": "set PORT=3333 && node dist/server.js"
+ et dans le code 
+ const port = +process.env.PORT || 3000; // je prend la variable d'environnement ou 3000 si je trouve pas 
+ le + devant le string transforme en number
+ 
+ install "dotenv" pour pourvoir mettre les variable en fichier // npm -i dotenv
+ a mettre dans un fichier dans le repertoire node_modules
+ cree .env et mettre PORT=4545
+ 
+  npm run build
+  npm run start:prod
+  
+
+ 
+ 
