@@ -6,6 +6,7 @@ import { LegaleComponent } from './routes/legale/legale.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'legale', component: LegaleComponent },
+  { path: 'stock', loadChildren: () => import('./stock/stock.module').then(m => m.StockModule) },
 ];
 
 @NgModule({

@@ -242,7 +242,6 @@ const routes: Routes = [
 ];
 3°) dire dans layout/body le retour
 dans body.component.html 
-
 <router-outlet> </router-outlet> 
 dans layout.module.ts importer le module de <router-outlet> 
 grace à 
@@ -254,3 +253,10 @@ footer.component.html, remplacer le href par routerLink
 et dans header.composent.html 
 <a routerLink='/"> gestion stock</a> //c'est pas href
 
+autre exercice pour voir les stocks (Lazy Loading)
+on rajoute un page, ais aussi son modules (stock)et ses routes (stockrouting)
+ng g m stock --route stock -m app -d
+ca fait un import dynamique comme un bundle, charger pendant l'execution si besoin.
+
+puis dans le home.component.html
+<button routerLink="/stock">Voir le stock</button>
