@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Article } from '../article';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,13 @@ export class ArticleService {
   constructor(private http: HttpClient) {
     this.retrieveAll();
   }
+
+  async add(a: Article) {
+    await lastValueFrom(
+      this.http.post<void>('http://localhost:3000/api/articles', a)
+    );
+  }
+
   retrieveAll() {
     const articles = this.http
       .get<Article[]>('http://localhost:3000/api/articles')

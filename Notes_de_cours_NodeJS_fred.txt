@@ -29,7 +29,8 @@ nvm list
 https://git-scm.com/
 Visual Studio Code => cmd => code
 https://tortoisegit.org/download/
-plugin surround 
+plugin surround => selectionner puis ....
+
 
 setting => cherche et cocher editing html 
 plugin install Angular Language Service
@@ -280,4 +281,10 @@ ng g s services/article -d => relier à app
 
 creation d'un interfaces pour creer une class
 ng g interface interfaces/article
+
+info => https://reactivex.io/ donne le resultat au compte goute
+
+
+librairie CORS pour laisser passer les request sur un autre server
+npm i cors
 
