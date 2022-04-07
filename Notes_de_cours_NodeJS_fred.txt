@@ -225,3 +225,28 @@ npm install normalize.css => https://caniuse.com/?search=fullscreen pour voir le
 a voir aussi le flex => https://css-tricks.com/
 npm install  sanitize.css
  voir https://www.w3schools.com/html/default.asp pour la doc html, JS et plus encore
+ 
+ 
+1°)creation des compasants de routs
+pour les page static, on va creer des routes vers les page static "mention legale" et "home"
+ng g c routes/home -d pour tester puis on retire le -d 
+ng g c routes/legale -d
+c'est ajouter dans le appmodules.ts
+2°) mapper des composants a des url dans approuting
+app-routing
+const routes: Routes = [
+{path: '', component: HomeComponent},
+{path: 'legal', component: LegalComponent}
+];
+3°) dire dans layout/body le retour
+dans body.component.html 
+
+<router-outlet> </router-outlet> 
+dans layout.module.ts importer le module router outlet
+4°) poser les liensdans footer et header
+footer.component.html 
+<a routerLink='/legal"> Mention legale</a> //c'est pas href
+
+dans header.composent.html 
+<a routerLink='/"> gestion stock</a> //c'est pas href
+
