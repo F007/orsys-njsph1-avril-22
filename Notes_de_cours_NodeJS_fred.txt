@@ -32,7 +32,7 @@ https://tortoisegit.org/download/
 
 setting => cherche et cocher editing html 
 plugin install Angular Language Service
-
+plugin install TypeScript Class Organizer  
 
 install https://prettier.io/ pour la mise en forme puis dans code click droit '"mettre en forme"
 mettre en anglais
@@ -271,4 +271,12 @@ const routes: Routes = [
   { path: 'add', component: AddComponent },
 ];
 puis on rajoute dans le html
+
+
+
+creation d'un service
+ng g s services/article -d => relier à app
+
+creation d'un interfaces pour creer une class
+ng g interface article
 
