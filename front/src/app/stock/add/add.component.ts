@@ -13,6 +13,10 @@ export class AddComponent implements OnInit {
     qty: new FormControl('default', [Validators.required]),
   });
 
+  submit() {
+    console.log('submit');
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
