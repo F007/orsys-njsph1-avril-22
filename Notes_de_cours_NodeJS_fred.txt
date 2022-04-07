@@ -9,8 +9,7 @@ accessibilité obligatoire pour les sites web RGAA https://www.numerique.gouv.fr
 
 GITHUB 
 creer un depot 
-git remote add origine https://jlg-formation/njsph1-avril-22.git
-git remote # pour info
+git remote add origine https://github.com/jlg-formation/njsph1-avril-22.git
 git push -u origine master
 
 Objectifs pédagogiques
@@ -226,6 +225,8 @@ a voir aussi le flex => https://css-tricks.com/
 npm install  sanitize.css
  voir https://www.w3schools.com/html/default.asp pour la doc html, JS et plus encore
  
+ Actuce : 
+ Selection + ctrl + D => multi selection pour modifier plusieurs a la fois
  
 1°)creation des compasants de routs
 pour les page static, on va creer des routes vers les page static "mention legale" et "home"
@@ -253,10 +254,21 @@ footer.component.html, remplacer le href par routerLink
 et dans header.composent.html 
 <a routerLink='/"> gestion stock</a> //c'est pas href
 
-autre exercice pour voir les stocks (Lazy Loading)
+== autre exercice pour voir les stocks (Lazy Loading)
 on rajoute un page, ais aussi son modules (stock)et ses routes (stockrouting)
 ng g m stock --route stock -m app -d
 ca fait un import dynamique comme un bundle, charger pendant l'execution si besoin.
 
 puis dans le home.component.html
 <button routerLink="/stock">Voir le stock</button>
+
+pour ajouter un omposant pour ajouter
+ng g c stock/add -d
+on ajoute la route et l'import dans stock-routing.modules.ts 
+import { AddComponent } from './add/add.component';
+const routes: Routes = [
+  { path: '', component: StockComponent },
+  { path: 'add', component: AddComponent },
+];
+puis on rajoute dans le html
+

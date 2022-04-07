@@ -1,24 +1,25 @@
-<p>stock works!</p>
 <main>
   <h1>Liste des articles</h1>
-  <nav>
-    <button routerLink="add">Ajouter</button>
-    <button routerLink="del">Supprimer</button>
-  </nav>
-  <table>
-    <thead>
-      <tr>
-        <th class="name">Nom</th>
-        <th class="price">Prix</th>
-        <th class="qty">Quantité</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="name">Tournevis</td>
-        <td class="price">2.99€</td>
-        <td class="qty">23</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="content">
+    <nav>
+      <button routerLink="add">Ajouter</button>
+      <button routerLink="del">Supprimer</button>
+    </nav>
+    <table>
+      <thead>
+        <tr>
+          <th class="name">Nom</th>
+          <th class="price">Prix</th>
+          <th class="qty">Quantité</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of [1, 2, 3, 4, 5]">
+          <td class="name">Tournevis</td>
+          <td class="price">2.99€</td>
+          <td class="qty">23</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </main>
