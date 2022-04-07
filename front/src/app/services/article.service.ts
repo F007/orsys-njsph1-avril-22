@@ -14,7 +14,7 @@ export class ArticleService {
   ];
 
   constructor(private http: HttpClient) {
-    this.retrieveAll();
+    //this.retrieveAll();
   }
 
   async add(a: Article) {
