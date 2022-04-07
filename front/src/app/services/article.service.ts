@@ -16,8 +16,18 @@ export class ArticleService {
     this.retrieveAll();
   }
   retrieveAll() {
-    const articles = this.http.get(
-      'http://localhost:3000/api/articles'
-    ).subscribe;
+    const articles = this.http
+      .get<Article[]>('http://localhost:3000/api/articles')
+      .subscribe({
+        next: (articles) => {
+          this.articles = articles;
+        },
+        error: (err) => {
+          console.log('err:', err);
+        },
+        complete: () => {
+          console.log('complete');
+        },
+      });
   }
 }

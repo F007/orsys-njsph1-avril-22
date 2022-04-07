@@ -1,6 +1,7 @@
 import express from "express";
 import serveIndex from "serve-index"; //gestion des repertoires
 import { api } from "./api";
+import cors from "cors";
 
 console.log("About the server");
 
@@ -12,6 +13,8 @@ app.use((req, res, next) => {
   console.log("req: ", req.url);
   next();
 });
+
+app.use(cors());
 
 app.use("/api", api); //router
 
