@@ -1,6 +1,8 @@
 import { Router } from "express";
-
+import { Articles } from "./interfaces/Articles";
 const app = Router();
+
+const articles: Articles[] = [{ id: 12, name: "marteau", price: 11, qty: 10 }];
 
 app.get("/crash", (req, res, next) => {
   (async () => {
@@ -12,6 +14,10 @@ app.get("/date", (req, res, next) => {
   res.json({
     date: new Date(),
   });
+});
+
+app.get("/articles", (req, res) => {
+  res.json(articles);
 });
 
 export const api = app;
