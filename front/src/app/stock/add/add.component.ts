@@ -22,9 +22,7 @@ export class AddComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
-    this.articleService.retrieveAll(); //raffraichissement
-  }
+  ngOnInit(): void {}
 
   async submit() {
     try {
