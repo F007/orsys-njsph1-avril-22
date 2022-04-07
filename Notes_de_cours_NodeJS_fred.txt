@@ -5,7 +5,7 @@ https://jlg-consulting.com/orsys/ => a voir
 github => jlg-formation/njsph1-avril-22.git
 
 accessibilité obligatoire pour les sites web RGAA https://www.numerique.gouv.fr/uploads/rgaa/RGAA-v4.1.pdf
-
+ctrl + shift + L => console.log dans vscode
 
 GITHUB 
 creer un depot 
@@ -29,6 +29,7 @@ nvm list
 https://git-scm.com/
 Visual Studio Code => cmd => code
 https://tortoisegit.org/download/
+plugin surround 
 
 setting => cherche et cocher editing html 
 plugin install Angular Language Service
@@ -278,5 +279,5 @@ creation d'un service
 ng g s services/article -d => relier à app
 
 creation d'un interfaces pour creer une class
-ng g interface article
+ng g interface interfaces/article
 

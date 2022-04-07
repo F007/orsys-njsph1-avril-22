@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Article } from '../article';
 
 @Injectable({
@@ -11,10 +12,12 @@ export class ArticleService {
     { name: 'pince', price: 3.44, qty: 234 },
   ];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.retrieveAll();
   }
   retrieveAll() {
-    throw new Error('Method not implemented.');
+    const articles = this.http.get(
+      'http://localhost:3000/api/articles'
+    ).subscribe;
   }
 }
