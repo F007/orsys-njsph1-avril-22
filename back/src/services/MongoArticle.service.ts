@@ -1,40 +1,49 @@
 import { Article } from "../interfaces/articles";
-import { v4 as uuidv4 } from "uuid";
-import fs from "fs";
+import { MongoClient, Db, Document, ObjectId } from "mongodb";
 
-const JSON_FILE = "data/articles.json";
+const uri = "mongodb://127.0.0.1:27017/gestion-stock";
+//marche pas avec localhost
+const convert = (d: Document) => {
+  const result = { ...d };
+  result.id = result._id.toHexString();
+  delete result._id;
+  return result;
+};
 
-let articles: Article[] = [];
+let db: Db;
 
-const init = () => {
+const init = async () => {
   try {
-    const str = fs.readFileSync(JSON_FILE, { encoding: "utf-8" });
-    articles = JSON.parse(str);
+    const client = new MongoClient(uri);
+    await client.connect();
+    console.log("connection a mmongo DB");
+    db = client.db();
   } catch (err) {
     console.log(err);
-    articles = [{ id: "12", name: "marteau", price: 11, qty: 10 }];
+    process.exit(1);
   }
 };
 
 init();
 
-const save = async () => {
-  fs.promises.writeFile(JSON_FILE, JSON.stringify(articles));
-};
-
 export class MongoArticleService {
   async add(article: Article): Promise<Article> {
-    const addArticle = { ...article };
-    addArticle.id = uuidv4();
-    articles.push(addArticle);
+    const result = await db.collection("articles").insertOne(article);
+
+    const addedArticle = { ...article };
+    addedArticle.id = result.insertedId.toHexString();
+    console.log("result:", result);
     return article;
   }
 
   async remove(ids: string[]) {
-    articles = articles.filter((a) => !ids.includes(a.id));
+    const objects = ids.map((id) => new ObjectId(id));
+    await db.collection("articles").deleteMany({ _id: { $in: objects } });
   }
 
-  retrieveAll() {
+  async retrieveAll() {
+    const documents = await db.collection("articles").find({}).toArray();
+    const articles = documents.map((d) => convert(d));
     return articles;
   }
 }
