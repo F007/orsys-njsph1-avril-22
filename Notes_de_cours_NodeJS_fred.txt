@@ -303,4 +303,14 @@ console.log(a.toto) s=> "jjjj"
 plugin lodash pour faire des tableaus
 on peut aussi export en json puis revenir en tableauslet 
 c = JSON.parse(JSON.stringify(a)) 
+sinon ca copie que le premier niveau.
+
+
+INFO drawio pour les graphiques visio
+
+pour les insertion avec mongo
+il faut quand meme ajouter une validation (pas obligatoire mais quand meme)
+
+
+plugin VSCODE Thunder Client
 

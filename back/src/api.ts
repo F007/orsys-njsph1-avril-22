@@ -2,8 +2,12 @@ import { json, Router } from "express";
 import { Article } from "./interfaces/Articles";
 //import { FileArticleService } from "./services/FileArticle.service";
 import { MongoArticleService } from "./services/MongoArticle.service";
-
+import { validation } from "./validation/validation";
 //import { JSONArticleService } from "./services/FileArticle.service";
+import {
+  ArticleCreateModel,
+  ArticleDeleteModel,
+} from "./validation/article.model";
 
 const app = Router();
 const articleService = new MongoArticleService();
@@ -34,9 +38,10 @@ app.get("/articles", (req, res) => {
   })();
 });
 
-app.post("/articles", (req, res) => {
+app.post("/articles", validation(ArticleCreateModel), (req, res) => {
   (async () => {
     try {
+      console.log("post");
       const article: Article = req.body;
       console.log("article: ", article);
       const addedArticle = await articleService.add(article);
