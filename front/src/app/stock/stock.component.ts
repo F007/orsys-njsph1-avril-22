@@ -33,6 +33,7 @@ export class StockComponent implements OnInit {
 
         await this.articleService.remove(this.selectedItems);
         this.selectedItems.clear();
+        this.articleService.retrieveAll();
       } catch (err) {
         console.log('err: ', err);
       }

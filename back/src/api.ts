@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 
 const app = Router();
 
-const articles: Articles[] = [
+let articles: Articles[] = [
   {
     id: "12",
     name: "marteau",
@@ -49,12 +49,26 @@ app.post("/articles", (req, res) => {
       console.log("article: ", article);
       article.id = uuidv4();
       articles.push(article);
-      res.status(201).json(article);
+      console.log();
+      res.status(201).end();
     } catch (err) {
       console.log("err: ", err);
       res.status(500).end();
     }
   })();
 });
+app.delete("/articles", (req, res) => {
+  (async () => {
+    try {
+      const ids: string[] = req.body;
+      console.log("ids: ", ids);
 
+      articles = articles.filter((a) => !ids.includes(a.id));
+      res.status(204).end();
+    } catch (err) {
+      console.log("err: ", err);
+      res.status(500).end();
+    }
+  })();
+});
 export const api = app;
