@@ -334,4 +334,7 @@ créer un repetoire "test" et fichier "test.ts"
 axios pour des tests https
 
 
+npm build a definir dans package.json
+pour faire les test avant le build
+
 
