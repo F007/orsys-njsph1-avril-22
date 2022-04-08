@@ -1,9 +1,10 @@
 import { json, Router } from "express";
-import { RAMArticlesService } from "./services/RAMArticles.service";
 import { Article } from "./interfaces/Articles";
-
+//import { FileArticleService } from "./services/FileArticle.service";
+//import { MongoArticleService } from "./services/MongoArticle.service";
+import { JSONArticleService } from "./services/FileArticle.service";
 const app = Router();
-const articleService = new RAMArticlesService();
+const articleService = new JSONArticleService();
 
 app.use(json());
 
