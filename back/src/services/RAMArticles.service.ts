@@ -23,7 +23,7 @@ let articles: Article[] = [
 ];
 
 export class RAMArticlesService {
-  add(article: Article): Article {
+  async add(article: Article): Promise<Article> {
     const addArticle = { ...article };
     addArticle.id = uuidv4();
     articles.push(addArticle);

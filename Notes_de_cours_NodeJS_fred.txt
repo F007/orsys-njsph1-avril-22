@@ -287,5 +287,20 @@ info => https://reactivex.io/ donne le resultat au compte goute
 
 librairie CORS pour laisser passer les request sur un autre server
 npm i cors
+setting => bracket pair (faut cocher)
 
-freecamp
+
+
+pour les retours cote serveur, il y a res.json ou res.send ou autre ...
+
+
+copy shadow (ca modifie les propriete de a 
+let a = {toto: "kkk"}
+let b = {...a}
+b.toto = "jjjj"
+console.log(a.toto) s=> "jjjj"
+
+plugin lodash pour faire des tableaus
+on peut aussi export en json puis revenir en tableauslet 
+c = JSON.parse(JSON.stringify(a)) 
+
