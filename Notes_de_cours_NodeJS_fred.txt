@@ -314,3 +314,24 @@ il faut quand meme ajouter une validation (pas obligatoire mais quand meme)
 
 plugin VSCODE Thunder Client
 
+bestof js pour les info
+
+doc de node.js => voir doc (FS, etc...
+npm i rxjs 
+voir les doc rxjs marbles 
+
+nodejs tcp 
+ rendre l'asynchrone avec async et await
+ 
+ 
+NODEJS mocha - tests et essais 
+==============================
+npm - mocha
+npm install --save @types/mocha
+
+créer un repetoire "test" et fichier "test.ts"
+
+axios pour des tests https
+
+
+
