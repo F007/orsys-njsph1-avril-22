@@ -1,22 +1,22 @@
 import { json, Router } from "express";
 import { Article } from "./interfaces/Articles";
-//import { FileArticleService } from "./services/FileArticle.service";
-import { MongoArticleService } from "./services/MongoArticle.service";
+import { FileArticleService } from "./services/FileArticle.service";
+//import { MongoArticleService } from "./services/MongoArticle.service";
 import { validation } from "./validation/validation";
 //import { JSONArticleService } from "./services/FileArticle.service";
 import {
   ArticleCreateModel,
   ArticleDeleteModel,
 } from "./validation/article.model";
+const articleService = new FileArticleService();
 
 const app = Router();
-const articleService = new MongoArticleService();
 
 app.use(json());
 
 app.get("/crash", (req, res, next) => {
   (async () => {
-    throw new Error("oups... crash....");
+    throw new Error("oups... crashed...");
   })();
 });
 
@@ -41,7 +41,6 @@ app.get("/articles", (req, res) => {
 app.post("/articles", validation(ArticleCreateModel), (req, res) => {
   (async () => {
     try {
-      console.log("post");
       const article: Article = req.body;
       console.log("article: ", article);
       const addedArticle = await articleService.add(article);
@@ -54,7 +53,7 @@ app.post("/articles", validation(ArticleCreateModel), (req, res) => {
   })();
 });
 
-app.delete("/articles", (req, res) => {
+app.delete("/articles", validation(ArticleDeleteModel), (req, res) => {
   (async () => {
     try {
       const ids: string[] = req.body;
@@ -69,4 +68,5 @@ app.delete("/articles", (req, res) => {
     }
   })();
 });
+
 export const api = app;
