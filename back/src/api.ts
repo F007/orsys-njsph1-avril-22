@@ -1,29 +1,10 @@
 import { json, Router } from "express";
-import { Articles } from "./interfaces/Articles";
-import { v4 as uuidv4 } from "uuid";
+import { RAMArticlesService } from "./services/RAMArticles.service";
+import { Article } from "./interfaces/Articles";
 
 const app = Router();
+const articleService = new RAMArticlesService();
 
-let articles: Articles[] = [
-  {
-    id: "12",
-    name: "marteau",
-    price: 11,
-    qty: 10,
-  },
-  {
-    id: "13",
-    name: "clou",
-    price: 55,
-    qty: 10,
-  },
-  {
-    id: "14",
-    name: "agraff",
-    price: 96,
-    qty: 10,
-  },
-];
 app.use(json());
 
 app.get("/crash", (req, res, next) => {
@@ -39,31 +20,40 @@ app.get("/date", (req, res, next) => {
 });
 
 app.get("/articles", (req, res) => {
-  res.json(articles);
-});
-
-app.post("/articles", (req, res) => {
   (async () => {
     try {
-      const article: Articles = req.body;
-      console.log("article: ", article);
-      article.id = uuidv4();
-      articles.push(article);
-      console.log();
-      res.status(201).end();
+      const articles = await articleService.retrieveAll();
+      res.json(articles);
     } catch (err) {
       console.log("err: ", err);
       res.status(500).end();
     }
   })();
 });
+
+app.post("/articles", (req, res) => {
+  (async () => {
+    try {
+      const article: Article = req.body;
+      console.log("article: ", article);
+      const addedArticle = await articleService.add(article);
+
+      res.status(201).json(addedArticle);
+    } catch (err) {
+      console.log("err: ", err);
+      res.status(500).end();
+    }
+  })();
+});
+
 app.delete("/articles", (req, res) => {
   (async () => {
     try {
       const ids: string[] = req.body;
       console.log("ids: ", ids);
 
-      articles = articles.filter((a) => !ids.includes(a.id));
+      await articleService.remove(ids);
+
       res.status(204).end();
     } catch (err) {
       console.log("err: ", err);
